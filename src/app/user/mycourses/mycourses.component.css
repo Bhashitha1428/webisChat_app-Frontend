@@ -1,0 +1,25 @@
+a:hover{
+  text-decoration: none;
+  color:rgb(34, 34, 34);
+
+}
+
+.card{
+
+  height: 350px;
+  width: 18rem;
+  margin-bottom: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.card:hover{
+  box-shadow: 0px 0px 4px 2px rgb(9, 144, 255);
+}
+.card-body{
+border-top: solid white 1px;
+background-color: rgb(240, 240, 240);
+}
+img{
+
+  height: 180px;
+}

@@ -1,0 +1,24 @@
+
+
+<div class="container" style="margin-top: 80px;">
+
+  <div class="row card-group"  >
+     <div class="col-4"  *ngFor="let video of courses.User.registerCourse"  >
+       <a [routerLink]="['/course',video._id]"  >
+           <div class="card">
+               <img src="{{video.url}}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">{{video.name}}</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+               </div>
+             </div>
+       </a>
+
+     </div>
+
+
+   </div>
+
+</div>
+

@@ -1,0 +1,55 @@
+#nav-bar{
+  background-color:white;
+  color: white;
+
+}
+
+li{
+
+  margin-left: 60px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+
+.mega-menu{
+
+  margin-top: 10px;
+  width: 200px;
+  overflow: hidden;
+  padding: 10px;
+  background-color:rgb(185, 185, 185);
+
+  border:white solid 2px;
+
+
+}
+
+.mega-menu  a{
+  text-decoration: none;
+  color:black;
+
+}
+.mega-menu  a:hover{
+ color: rgb(8, 104, 248);
+}
+
+#logout{
+  height: 50px;
+  width: 50px;
+}
+
+/*drop down arrow */
+.logout-dropdown::after {
+  display:none;
+}
+
+.logout-dropdown-menu{
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+

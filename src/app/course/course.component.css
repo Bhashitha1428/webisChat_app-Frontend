@@ -1,0 +1,21 @@
+
+.details{
+  background-color: rgb(99, 99, 99);
+  margin-right: 10px;
+  height: 250px;
+  color:white;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1450px) {
+  .col-details {
+    margin-left: 300px;
+    margin-top: -200px;
+
+
+  }
+  img{
+    width: 280px;
+    height: 200px;
+  }
+
+}

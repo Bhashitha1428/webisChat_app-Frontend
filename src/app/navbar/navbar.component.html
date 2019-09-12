@@ -1,0 +1,150 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav-bar">
+    <a class="navbar-brand" href="#">WEBIS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/home">Home </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown" >
+            <div class="row">
+
+              <div class="col-md-12" *ngFor="let course of loadedCourses" >
+
+                <a style="opacity: 100%;"[routerLink]="['/displaycourses', course.name]" (click)="onSelect(course.name)">{{course.name}}</a>
+                <hr style="background-color: white;">
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+          </div>
+        </li>
+      </ul>
+      <!-- <mat-form-field>
+
+
+        <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl" >
+         <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+         </mat-autocomplete>
+
+
+      </mat-form-field> -->
+
+        <button *ngIf="!userService.loggedIn()" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> Login</button>
+
+        <div class="btn-group" *ngIf="userService.loggedIn()">
+
+              <img id="logout" src="{{user.imageURL}}" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="rounded-circle">
+
+
+              <div class="dropdown-menu" style="margin-left: -100px;">
+                <a class="dropdown-item" (click)="onLogout()" routerLink="/home"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>logout</a>
+
+                <a class="dropdown-item" routerLink="/account" >Setting</a>
+
+              </div>
+            </div>
+    </div>
+  </nav>
+
+
+
+<!-- -------------------------Login Account Modal------------------------------------------------------ -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+              <p class="text-center">I AM A</p>
+          </div>
+
+        </div>
+        <div class="row" >
+          <div class="col-6">
+              <div class="card" style="width: 12rem;">
+                  <img src="https://images02.military.com/sites/default/files/styles/full/public/media/global/newscred/2017/03/online-training-06-mar-2017.jpeg.jpg?itok=WzYOsh8c" class="card-img-top" width="50" height="150">
+                  <div class="card-body">
+
+                    <a href="#" class="btn btn-outline-primary  btn-block" data-toggle="modal" data-target="#exampleModal1" data-dismiss="modal" >Student</a>
+                  </div>
+                </div>
+          </div>
+          <div class="col-6">
+              <div class="card" style="width: 12rem;">
+                  <img src="https://www.tefl.net/elt/wp-content/uploads/2018/08/online-teacher.jpg" class="card-img-top" width="50" height="150">
+                  <div class="card-body">
+
+                    <a href="#" class="btn btn-outline-primary  btn-block" routerLink="/contentprovider" data-dismiss="modal">Content provider </a>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- -------------------------End Login Account Modal------------------------------------------------------ -->
+
+<!-- --------------------------Login Form Modal-------------------------------------------------------------->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+
+            <form (submit)="onLogin()" >
+                <div class="container">
+
+                <div class="row">
+
+                  <div class="form-group col-sm">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" name="email">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-sm">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="password" name="password">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                     <button type="submit" class="btn btn-secondary btn-block" style="float: right;margin-top: 15px; margin-bottom: 30px;">Login</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- --------------------------End Login Form Modal-------------------------------------------------------------->
+
+

@@ -1,0 +1,24 @@
+
+<div class="row" >
+
+  <div class="col-4"  *ngFor="let user of allUsers" style="margin-bottom: 50px;"  >
+
+
+      <div class="card" >
+              <img src={{user.imageURL}} class="card-img-top" class="rounded-circle">
+              <div class="card-body">
+
+                <p>{{user.fname}}</p>
+                <p>{{user.lname}}</p>
+                <p>{{user.email}}</p>
+                <p>{{user.role}}</p>
+
+
+
+              </div>
+            </div>
+
+
+
+    </div>
+</div>

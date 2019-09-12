@@ -1,0 +1,27 @@
+<div class="container-fluid" style="margin-top: 55px;">
+  <div class="row">
+    <div class="col-3" style="height: 1000px; background-color: rgb(206, 238, 253);">
+        <button type="button" class="btn btn-outline-primary btn-block " routerLink="/addcourse" style="margin-top: 50px;">Add Course</button>
+        <button type="button" class="btn btn-outline-primary btn-block">Delete Course</button>
+        <button type="button" class="btn btn-outline-primary btn-block">Update Course</button>
+    </div>
+    <div class="col-8">
+      <h3 class="text-center">My Courses</h3>
+
+<div class="row card-group" >
+    <div class="col-4"  *ngFor="let course of courses" >
+      <div class="card" style="width: 18rem; margin-bottom: 100px; ">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{course}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>
+

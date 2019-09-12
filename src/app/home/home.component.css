@@ -1,0 +1,29 @@
+
+#intro{
+  background-image: url("https://images.yourstory.com/cs/2/5739db30-22e7-11e9-9aaa-0334d2a19842/ed-tech1553237040995.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:100% 100%;
+  height: 80vh;
+  width: 100%;
+  float: right;
+  margin-top: 60px;
+  box-shadow: 0 15px 10px -10px black;
+}
+
+form{
+  color:white;
+  width: 30%;
+  float: right;
+  margin-top: 15px;
+
+  border: solid 3px white;
+  border-radius: 15px;
+
+}
+
+input{
+  background-color: rgb(40, 48, 66);
+  color:white;
+
+}

@@ -1,0 +1,74 @@
+
+<div class="container" style="margin-top:65px; ">
+
+  <div class="row">
+    <div class="col-3">
+
+      <img src="{{userImg.imageURL}}" class="rounded-circle" >
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
+            <a class="nav-link" id="v-pills-delete-tab" data-toggle="pill" href="#v-pills-delete" role="tab" aria-controls="v-pills-delete" aria-selected="false">Delete Account</a>
+
+          </div>
+
+    </div>
+    <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                <form >
+                   <!-- --------------------------change name------------------------------- -->
+
+                  <h5>Change Name</h5>
+
+                    <div class="form-row" style=" margin-bottom: 30px;">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="First name" name="fname1" [(ngModel)]="fname" value="{{userImg.fname}}">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Last name" name="lname1" [(ngModel)]="lname" value="{{userImg.lname}}">
+                      </div>
+
+                    </div>
+                     <!-- --------------------------change Image------------------------------- -->
+                    <h5>Add/Change Image</h5>
+                    <div class="form-row" style=" margin-bottom: 30px;">
+                        <div class="form-group">
+
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onFileSelected($event)">
+                          </div>
+                      </div>
+                       <!-- --------------------------change Password------------------------------- -->
+                      <h5>Change Password</h5>
+                      <div class="form-row" style=" margin-bottom: 30px;">
+                          <div class="col">
+                            <input type="password" class="form-control" placeholder="Current password" style=" margin-bottom: 10px;">
+                            <input type="password" class="form-control" placeholder="New password" style=" margin-bottom: 10px;">
+                            <input type="password" class="form-control" placeholder="Confirm New password" style=" margin-bottom: 10px;">
+                          </div>
+
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group">
+
+                              <button type="submit" (click)="uploadImage1()" class="btn btn-outline-primary float-right">Save</button>
+
+                          </div>
+                      </div>
+                  </form>
+            </div>
+            <div class="tab-pane fade" id="v-pills-delete" role="tabpanel" aria-labelledby="v-pills-delete-tab">
+               <!-- --------------------------Delete Account------------------------------- -->
+              <h5>Delete Account</h5>
+              <div class="form-row">
+                <div class="col">
+                  <input type="password" class="form-control" placeholder="password" style=" margin-bottom: 10px;">
+                  <button type="submit" class="btn btn-outline-danger float-right">Delete</button>
+                </div>
+
+            </div></div>
+
+          </div>
+    </div>
+  </div>
+</div>

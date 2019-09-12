@@ -1,0 +1,21 @@
+<div class="row card-group sub-catergory-course">
+    <!-- loadedCourseVideo.cor -->
+  <div class="col-4"  *ngFor="let course of denyCourse"  >
+
+
+    <div class="card" >
+        <a [routerLink]="['/course',course._id]" >
+            <img src={{course.url}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{course.name}}</h5>
+              <P>Author: {{course.author}}</P>
+            </div>
+          </a>
+          <span class="btn btn-outline-primary" (click)="givePermission(course._id)">Accept </span>
+          </div>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,88 @@
+<div class="row" style="margin-top: 57px">
+  <!-- filter colom -->
+  <div class="col-2" style="background-color:  rgb(230, 230, 230);border-right: solid white 2px;">
+
+    <h4 class='text-center'>Filter By </h4><br>
+
+    <form>
+
+      <h6>Type</h6><br>
+
+      <mat-checkbox   color="primary" #fPaid value="paid" (click)="onPaid()">Paid Course</mat-checkbox><br>
+      <mat-checkbox   color="primary" #fFree value="free" (click)="onFree()">Free Course</mat-checkbox>
+
+      <hr>
+      <h6>Skill Level</h6><br>
+      <mat-checkbox color="primary" #fBeginner value="beginner" (click)="onBeginner()">Beginner</mat-checkbox><br>
+      <mat-checkbox color="primary" #fIntermediate value="intermediate" (click)="onIntermediate()">Intermediate</mat-checkbox><br>
+      <mat-checkbox color="primary" #fAdvance value="advance" (click)="onAdvance()">Advance</mat-checkbox>
+      <hr>
+      <h6>Duration</h6><br>
+      <mat-checkbox color="primary" #fLessMonth value="lessmonth" (click)="onLessMonth()"> &lt; Month</mat-checkbox><br>
+      <mat-checkbox color="primary" #fLess3Month value="1-3month" (click)="onLess3Month()">1 - 3 Month</mat-checkbox><br>
+      <mat-checkbox color="primary" #fMore3Month value="3+month" (click)="onMore3Month()">3+ Month</mat-checkbox>
+
+    </form>
+
+
+
+
+
+  </div>
+  <!-- course colom -->
+
+  <div class="col-10">
+
+    <div class="row sub-catergories">
+        <div class="col-md-1 " *ngFor="let subcourse of loadedSubCourses.re " >
+
+            <a [routerLink]="['/displaycourses',mainCourse.id,subcourse.name]" (click)="onSubCourse(mainCourse.id,subcourse.name) ">{{subcourse.name}}</a>
+          </div>
+    </div>
+
+          <div class="row card-group sub-catergory-course"  *ngIf="subCourse.id==null">
+              <!-- loadedCourseVideo.cor -->
+            <div class="col-4"  *ngFor="let video of loadedSubCourses.cor | type:paid:free | skillLevel:beginner:advance:intermediate | duration:lessmonth:less3month:more3month "  >
+
+
+              <a [routerLink]="['/course',video._id]" >
+              <div class="card" >
+                      <img src={{video.url}} class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{video.name}}</h5>
+                        <p>{{video.description}}</p>
+                        <!-- <div style="text-align:center">
+
+                        </div> -->
+                        <star-rating value="3" checkedcolor="grey" uncheckedcolor="black" size="24px"    readonly="true" (rate)="onRate($event)"></star-rating>
+                      </div>
+                    </div>
+                    </a>
+
+
+            </div>
+
+
+          </div>
+
+          <div class="row card-group sub-catergory-course"*ngIf="subCourse.id!=null">
+            <div class="col-4"  *ngFor="let video of loadedCourseVideosub |  type:paid:free | skillLevel:beginner:intermediate:advance | duration:lessmonth:less3month:more3month "  >
+              <a [routerLink]="['/course',video._id]"  >
+                  <div class="card">
+                      <img src={{video.url}} class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{video.name}}</h5>
+                        <p>{{video.description}}</p>
+                      </div>
+                    </div>
+              </a>
+
+            </div>
+
+
+          </div>
+
+
+</div>
+</div>
+
